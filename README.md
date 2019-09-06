@@ -2,6 +2,9 @@
 
 ## Building Components of Interactive Dashboard
 
+Result:
+![b3-dashboard-top](b3-dashboard-top.jpg)
+![b3-dashboard-bottom](b3-dashboard-bottom.jpg)
 
 #### Set up routes in [app.py](app.py) to run with Flask
 
