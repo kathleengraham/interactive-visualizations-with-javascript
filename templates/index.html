@@ -6,26 +6,26 @@
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
   <title>B^3 Dashboard</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+  <link href="https://fonts.googleapis.com/css?family=Gayathri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
 </head>
 
-<body>
+<body style='font-family: "Gayathri", sans-serif;'>
 
-  <div class='jumbotron jumbotron-fluid text-center'>
+  <div class='jumbotron jumbotron-fluid text-center' style='background-color:#E86868; color:white;'>
     <h1>B^3 Dashboard</h1>
     <h5>Use the interactive charts below to explore the belly button biodiversity dataset</h5>
   </div>
   <div class='container'>
     <div class='row justify-content-center'>
-      <div class='col-md-4'>
-        <div class='well'>
-          <h5>Select Sample:</h5>
-          <select id='selDataset' onchange='optionChanged(this.value)'></select>
-        </div>
-        <div class='panel panel-primary'>
-          <div class='panel-heading'>
-            <h3 class='panel-title'>Sample MetaData</h3>
+      <div class='col-md-5'>
+        <div class='card'>
+          <div class='card-header' style='background-color:#E86868; color:white;'><h3>Sample Metadata</h3></div>
+          <div class='card-body'>
+            <div class='card-text'><h5>Select Sample:</h5><select id='selDataset' onchange='optionChanged(this.value)'></select></div>
+            <br><hr>
+            <div id = 'sample-metadata' class='card-text'></div>
           </div>
-          <div id='sample-metadata' class='panel-body'></div>
         </div>
       </div>
       <div class='col-md-5'>
