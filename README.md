@@ -162,7 +162,8 @@ function buildCharts(sample) {
       hovertext: data.otu_labels.slice(0,10),
       type: 'pie',
       marker: {
-        colors: ['#4D4DFF', '#C14D8B', '#FF4D4D', '#884DC4', '#99177D', '#644DE8', '#E04D6C', '#F05D5E', '#784DD4' ,'#EAA6A6']
+        colors: ['#002047','#084081', '#0868ac', '#2b8cbe', '#4eb3d3', '#7bccc4', '#a8ddb5', '#ccebc5', '#e0f3db' ,'#f7fcf0']
+        // http://colorbrewer2.org/?type=sequential&scheme=GnBu&n=9
       }
     }]
 
@@ -184,7 +185,17 @@ function buildCharts(sample) {
       marker: {
         color: data.otu_ids,
         size: data.sample_values,
-        colorscale: 'Bluered'
+        colorscale: [[0, '#002047'], [0.1, '#002047'],
+          [0.1, '#084081'], [0.2, '#084081'],
+          [0.2, '#0868ac'], [0.3, '#0868ac'], 
+          [0.3, '#2b8cbe'], [0.4, '#2b8cbe'],
+          [0.4, '#4eb3d3'], [0.5, '#4eb3d3'],
+          [0.5, '#7bccc4'], [0.6, '#7bccc4'],
+          [0.6, '#a8ddb5'], [0.7, '#a8ddb5'],
+          [0.7, '#ccebc5'], [0.8, '#ccebc5'],
+          [0.8, '#e0f3db'], [0.9, '#e0f3db'],
+          [0.9, '#f7fcf0'], [1.0, '#f7fcf0']]
+          // https://plot.ly/python/colorscales/
       }
     }]
     
@@ -248,21 +259,20 @@ In [index.html](templates/index.html), I used the newest version of [Bootstrap](
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <title>B^3 Dashboard</title>
+  <title>B&sup3; Dashboard</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
   <link href='https://fonts.googleapis.com/css?family=Gayathri&display=swap' rel='stylesheet'>
-  <link rel='stylesheet' href='style.css' media='print' onload='this.media='all''>
 </head>
-<body style='font-family: 'Gayathri', sans-serif;'>
-  <div class='jumbotron jumbotron-fluid text-center' style='background-color:#E86868; color:white;'>
-    <h1>B^3 Dashboard</h1>
+<body style='font-family: "Gayathri", sans-serif;'>
+  <div class='jumbotron jumbotron-fluid text-center' style='background-color:#4eb3d3; color:white;'>
+    <h1>B&sup3; Dashboard</h1>
     <h5>Use the interactive charts below to explore the belly button biodiversity dataset</h5>
   </div>
   <div class='container'>
     <div class='row justify-content-center'>
-      <div class='col-md-5'>
+      <div class='col-md-4'>
         <div class='card'>
-          <div class='card-header' style='background-color:#E86868; color:white;'><h3>Sample Metadata</h3></div>
+          <div class='card-header' style='background-color:#4eb3d3; color:white;'><h3>Sample Metadata</h3></div>
           <div class='card-body'>
             <div class='card-text'><h5>Select Sample:</h5><select id='selDataset' onchange='optionChanged(this.value)'></select></div>
             <br><hr>
@@ -276,7 +286,7 @@ In [index.html](templates/index.html), I used the newest version of [Bootstrap](
     </div>
   </div>
   <div class='row'>
-    <div class='col-md-12'>
+    <div class='col'>
       <div id='bubble'></div>
     </div>
   </div>

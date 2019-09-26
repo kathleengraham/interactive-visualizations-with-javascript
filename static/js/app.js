@@ -31,7 +31,8 @@ function buildCharts(sample) {
       hovertext: data.otu_labels.slice(0,10),
       type: 'pie',
       marker: {
-        colors: ['#4D4DFF', '#C14D8B', '#FF4D4D', '#884DC4', '#99177D', '#644DE8', '#E04D6C', '#F05D5E', '#784DD4' ,'#EAA6A6']
+        colors: ['#002047','#084081', '#0868ac', '#2b8cbe', '#4eb3d3', '#7bccc4', '#a8ddb5', '#ccebc5', '#e0f3db' ,'#f7fcf0']
+        // http://colorbrewer2.org/?type=sequential&scheme=GnBu&n=9
       }
     }]
 
@@ -53,7 +54,17 @@ function buildCharts(sample) {
       marker: {
         color: data.otu_ids,
         size: data.sample_values,
-        colorscale: 'Bluered'
+        colorscale: [[0, '#002047'], [0.1, '#002047'],
+          [0.1, '#084081'], [0.2, '#084081'],
+          [0.2, '#0868ac'], [0.3, '#0868ac'], 
+          [0.3, '#2b8cbe'], [0.4, '#2b8cbe'],
+          [0.4, '#4eb3d3'], [0.5, '#4eb3d3'],
+          [0.5, '#7bccc4'], [0.6, '#7bccc4'],
+          [0.6, '#a8ddb5'], [0.7, '#a8ddb5'],
+          [0.7, '#ccebc5'], [0.8, '#ccebc5'],
+          [0.8, '#e0f3db'], [0.9, '#e0f3db'],
+          [0.9, '#f7fcf0'], [1.0, '#f7fcf0']]
+          // https://plot.ly/python/colorscales/
       }
     }]
     
