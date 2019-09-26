@@ -1,10 +1,20 @@
 # Interactive Visualizations with JavaScript, D3, and Plotly
 
-## Building Components of Interactive Dashboard
+## Current B^3 Dashboard
 
-Result:
-![b3-dashboard-top](b3-dashboard-top.jpg)
-![b3-dashboard-bottom](b3-dashboard-bottom.jpg)
+#### Run Flask
+
+![run-flask-git-bash](images/flask-run.gif)
+
+<br>
+
+#### Initial View
+
+![b3-dashboard](images/b3-dashboard.gif)
+
+<br>
+
+## Building Components of Interactive Dashboard
 
 #### Set up routes in [app.py](app.py) to run with Flask
 
