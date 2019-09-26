@@ -4,13 +4,12 @@
 
 #### Run Flask
 
-![run-flask-git-bash](images/flask-run.gif)
-
+<p align='center'><img src='images/flask-run.gif' alt='run-flask-git-bash'></p>
 <br>
 
 #### Initial View
 
-![b3-dashboard](images/b3-dashboard.gif)
+<p align='center'><img src='images/b3-dashboard.gif' alt='b3-dashboard'></p>
 
 <br>
 
@@ -128,6 +127,8 @@ if __name__ == '__main__':
 
 #### Prepare [app.js](app.js) with [Plotly JavaScript Open Source Graphing Library](https://plot.ly/javascript/)
 
+First, I made a function that would build all the metadata into a panel/card with the keys and values of each.
+
 ```javascript
 function buildMetadata(sample) {
   // fetch sample metadata
@@ -147,7 +148,17 @@ function buildMetadata(sample) {
   })
 
 }
+```
 
+<br>
+
+<p align='center'><img src='images/sample-metadata-panel.jpg' alt='sample-metadata-panel'></p>
+
+<br>
+
+Then I made a function to build two styles of charts from the same data: a pie chart and a bubble chart. I used [Colorbrewer](http://colorbrewer2.org/?type=sequential&scheme=GnBu&n=9) for the color scheme and added a darker color to round it out to ten since 9 was the highest option for a sequential scheme. I also figured out how to [make my own colorscale in Python](https://plot.ly/python/colorscales/) instead of using a preset color such as 'Viridis'. This was in order to match the colors I chose from Colorbrewer.
+
+```javascript
 function buildCharts(sample) {
   // fetch sample data for plots
   let chartsURL = '/samples/' + sample
@@ -216,7 +227,23 @@ function buildCharts(sample) {
     Plotly.newPlot('bubble', trace1, layout1)
   })
 }
+```
 
+Pie Chart:
+
+<p align='center'><img src='images/piechart.jpg' alt='pie-chart'></p>
+
+<br>
+
+Bubble Chart:
+
+<p align='center'><img src='images/bubblechart.jpg' alt='bubble-chart'></p>
+
+<br>
+
+Then, I made two functions: init and optionChanged. The init function just initializes the build of the first sample. The optionChanged function updates the previous functions buildCharts and buildMetadata when a new sample is selected by the user from the d3 selector (displayed in the metadata panel).
+
+```javascript
 function init() {
   // grab a reference to the dropdown select element
   let selector = d3.select('#selDataset')
@@ -247,10 +274,13 @@ function optionChanged(newSample) {
 init()
 ```
 
+<p align='center'><img src='images/option-changed-new-sample.gif' alt='update-sample-gif'></p>
+
+<br>
 
 #### Render template
 
-In [index.html](templates/index.html), I used the newest version of [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to create a jumbotron, card with sample picker and sample results, a pie chart, and a bubble chart.
+In [index.html](templates/index.html), I used [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to create a jumbotron, card with sample picker and sample results (panel was used in the previous versions of Bootstrap), a pie chart, and a bubble chart.
 
 ```html
 <!DOCTYPE html>
