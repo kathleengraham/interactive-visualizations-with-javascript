@@ -1,1 +1,1 @@
-web: gunicorn b3-dashboard.app:app
+web: gunicorn app:app
