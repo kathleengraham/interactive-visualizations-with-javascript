@@ -1,6 +1,8 @@
 # Interactive Visualizations with JavaScript, D3, and Plotly
 
-## Current B^3 Dashboard
+## Current B<sup>3</sup> Dashboard
+
+[](https://b3-dashboard.herokuapp.com/)
 
 #### Run Flask
 
