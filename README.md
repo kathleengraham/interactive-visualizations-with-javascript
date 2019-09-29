@@ -430,3 +430,6 @@ I was able to quickly see how the dropdown functioned and whether the charts upd
 I wanted to deploy my app to Heroku so that others could test out the functionality as well. But this was a frustrating step. It took a long time, and it ended up being the simplest little fix. That's how programming goes. So in the future, I will be less stubborn about trying to figure this out by myself and just ask for help after a much shorter time of struggling on my own.
 
 The steps I took to deploy my app to Heroku were actually pretty simple. I logged into my Heroku account through Google Chrome.
+
+After that, I added a new app and called it 'b3-dashboard'. I quickly connected to my github repo through the handy button Heroku provided and searching through the repo names to find the right one.
+
